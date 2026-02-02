@@ -1,5 +1,5 @@
 ---
-title: "Introduction"
+title: "resources"
 date: "2026"
 parent: introduction
 author: "Farhad Tanveer"
