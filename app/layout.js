@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { getDocuments } from "./lib/doc";
+import { getDocuments } from "../lib/doc";
 import Header from "@/components/Header";
 
 const geistSans = Geist({
@@ -15,17 +15,16 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "DocuCraft - A Next.js Document Management App",
-  description: " Manage and organize your documents with ease using DocuCraft.",
+  description: "Manage and organize your documents with ease using DocuCraft.",
 };
 
 export default function RootLayout({ children }) {
   const allDocuments = getDocuments();
-  // console.log(allDocuments);
   return (
     <html lang="en">
-      <body>
+      <body className={`${geistSans.variable} ${geistMono.variable} h-full`}>
         <div className="h-full lg:ml-72 xl:ml-80">
-          <Header docs={allDocuments} />
+          <Header docs={allDocuments ?? []} />
           <div className="relative px-4 pt-14 sm:px-6 lg:px-8">
             <main className="flex-auto py-16">
               <div className="absolute inset-0 -z-10 mx-0 max-w-none overflow-hidden">

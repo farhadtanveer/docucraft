@@ -1,6 +1,7 @@
-import { getDocumentContent } from "@/lib/doc";
 import Link from "next/link";
 import Tag from "./Tag";
+import { getDocumentContent } from "@/lib/doc";
+
 const ContentDisplay = async ({ id }) => {
   const documentContent = await getDocumentContent(id);
 
@@ -11,7 +12,7 @@ const ContentDisplay = async ({ id }) => {
       <h1>{documentContent.title}</h1>
       <div>
         <span>Published On: {documentContent.date}</span> by{" "}
-        <Link href={`/author/${documentContent.author}`}>
+        <Link href={`/authors/${documentContent.author}`}>
           {documentContent.author}
         </Link>{" "}
         under the{" "}
